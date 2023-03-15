@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const InnerLink = styled.a`
- color: #61fbcd;
- padding-left: 0.2rem;
+ color: #b3b492;
+ padding-left: 0.4rem;
 `;
 
 const Link = ({ url, title }) => (

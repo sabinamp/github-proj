@@ -26,7 +26,7 @@ const List = ({ items, title }) => (
       <Title>{title}</Title>
       <ListWrapper>
         {items.map(item =>
-          <ListItem key={item.label} >
+          <ListItem key={item.field} >
             <BoldTxt>{item.label}</BoldTxt>{item.value}
           </ListItem >
         )}
