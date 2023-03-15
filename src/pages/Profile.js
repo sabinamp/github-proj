@@ -54,7 +54,7 @@ const Profile=({userName})=>{
     const projects = repos.map(repository => ({
       field: repository.name,
       label: repository.name,
-      value: <Link url={repository.html_url} title='Github URL' />,
+      value: <Link url={repository.html_url} title='GitHub URL' />,
     }));
 
 
