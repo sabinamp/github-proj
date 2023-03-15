@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 import logo from "../media/github_png/GitHub-Mark-120px-plus.png";
 import Header from "../components/Header";
+import Profile from "../pages/Profile";
 
 const AppWrapper = styled.div`
 	text-align: center;
@@ -22,6 +23,7 @@ function App() {
 			<GlobalStyle />
 			<AppWrapper>
 				<Header logo={logo} />
+				<Profile userName="sabinamp" />
 			</AppWrapper>
 		</>
 	);
