@@ -24,16 +24,17 @@ const linkedinURL='https://www.linkedin.com/in/sabinamariab/';
 const Profile=({userName})=>{
     const [loading, setLoading] = useState(false);
     const [profile, setProfile] = useState({});
-    const [repos, setRepos]= useState([]);
+   
 
 
     const items= [
       {field: 'Name', label: 'Name ', value: profile.name },
+      {field: 'Username ', label: 'Username', value: profile.login},
       {field: 'Location', label: 'Location ', value: profile.location},
       {field: 'GitHub Html URL', label: 'GitHub URL', value: <Link url={profile.html_url} title={profile.html_url} />
       },
       {field: 'LinkedIn URL', label: 'LinkedIn URL', value: <Link url={linkedinURL} title={linkedinURL} />
-      },
+      },     
     ]
 
     useEffect( ()=>{
@@ -44,10 +45,10 @@ const Profile=({userName})=>{
             if (profileJSON) {
               setProfile(profileJSON);
               setLoading(false);
-              
+              /* 
               const repositories = await fetch(profileJSON.repos_url);
               const repositoriesJSON = await repositories.json();
-              setRepos(repositoriesJSON);
+              setRepos(repositoriesJSON); */
 
             }
           }
@@ -56,13 +57,6 @@ const Profile=({userName})=>{
 
     },[userName]);
 
-    const projects = repos.map(repository => ({ 
-      field: repository.name,
-      label: repository.name +", Language: " +repository.language,      
-      value: <Link url={repository.html_url} title='GitHub URL' /> ,
-    }          
-
-    ));
 
 
     return (
@@ -73,8 +67,7 @@ const Profile=({userName})=>{
           ) : (
             <div>
                  <ProfileAvatar src={profile.avatar_url} alt={profile.name} />
-                 <List items={items} />
-                 <List items={projects} />
+                 <List items={items} />               
                 
             </div>
           )}

@@ -2,6 +2,9 @@ import styled, { createGlobalStyle } from "styled-components";
 import logo from "../media/github_png/GitHub-Mark-120px-plus.png";
 import Header from "../components/Header";
 import Profile from "../pages/Profile";
+import Projects from "../pages/Projects";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const AppWrapper = styled.div`
 	text-align: center;
@@ -20,11 +23,16 @@ const GlobalStyle = createGlobalStyle`
 function App() {
 	return (
 		<>
+		  <BrowserRouter>
 			<GlobalStyle />
 			<AppWrapper>
-				<Header logo={logo} />
-				<Profile userName="sabinamp" />
-			</AppWrapper>
+				<Header logo={logo} />				
+				<Routes>
+            		<Route path='/' element={<Profile userName='sabinamp' />} />
+					<Route path='/projects' element= {<Projects userName='sabinamp' />} />
+            	</Routes>
+			</AppWrapper>			
+		</BrowserRouter>
 		</>
 	);
 }
