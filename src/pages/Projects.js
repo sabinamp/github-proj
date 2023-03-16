@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import List from '../components/List';
-import Link from '../components/Link';
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+import List from "../components/List";
+import AppCLink from "../components/AppCLink";
+import { Link as RouterLink } from "react-router-dom";
 
 const ProjWrapper = styled.div`
 	width: auto;
@@ -21,7 +22,9 @@ const Projects = ({ userName }) => {
 
 	useEffect(() => {
 		async function fetchData() {
-			const repositories = await fetch(`https://api.github.com/users/${userName}/repos`);
+			const repositories = await fetch(
+				`https://api.github.com/users/${userName}/repos`
+			);
 			const repositoriesJSON = await repositories.json();
 
 			if (repositoriesJSON) {
@@ -36,7 +39,14 @@ const Projects = ({ userName }) => {
 	const projects = repos.map((repository) => ({
 		field: repository.name,
 		label: repository.name + ", Language: " + repository.language,
-		value: <Link url={repository.html_url} title="GitHub Repository URL" />,
+		value: (
+			<div>
+				<AppCLink url={repository.html_url} title="GitHub Repository HTML URL" />
+                <RouterLink to={`/projects/${repository.name}`}
+					title="GitHub Repository Details" > Project Details</RouterLink>
+			
+			</div>
+		),
 	}));
 
 	return (

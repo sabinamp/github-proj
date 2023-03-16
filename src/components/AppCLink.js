@@ -5,7 +5,7 @@ const AppLink = styled.a`
  padding-left: 0.4rem;
 `;
 
-const Link = ({ url, title }) => (
+const AppCLink = ({ url, title }) => (
   <AppLink
     href={url}
     target='_blank'
@@ -14,4 +14,4 @@ const Link = ({ url, title }) => (
   </AppLink>
 );
 
-export default Link;
+export default AppCLink;
