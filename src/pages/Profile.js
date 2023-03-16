@@ -19,15 +19,20 @@ const ProfileAvatar = styled.img`
   width: 180px;
 `;
 
+const linkedinURL='https://www.linkedin.com/in/sabinamariab/';
+
 const Profile=({userName})=>{
     const [loading, setLoading] = useState(false);
     const [profile, setProfile] = useState({});
     const [repos, setRepos]= useState([]);
 
+
     const items= [
       {field: 'Name', label: 'Name ', value: profile.name },
       {field: 'Location', label: 'Location ', value: profile.location},
-      {field: 'Repos URL', label: 'Repos URL', value: <Link url={profile.repos_url} title={profile.repos_url} />
+      {field: 'GitHub Html URL', label: 'GitHub URL', value: <Link url={profile.html_url} title={profile.html_url} />
+      },
+      {field: 'LinkedIn URL', label: 'LinkedIn URL', value: <Link url={linkedinURL} title={linkedinURL} />
       },
     ]
 
@@ -51,11 +56,13 @@ const Profile=({userName})=>{
 
     },[userName]);
 
-    const projects = repos.map(repository => ({
+    const projects = repos.map(repository => ({ 
       field: repository.name,
-      label: repository.name,
-      value: <Link url={repository.html_url} title='GitHub URL' />,
-    }));
+      label: repository.name +", Language: " +repository.language,      
+      value: <Link url={repository.html_url} title='GitHub URL' /> ,
+    }          
+
+    ));
 
 
     return (
