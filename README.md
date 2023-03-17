@@ -7,5 +7,7 @@
 - You can click on the projects and move on to a new page that shows the information for a specific project.
 
 * Screenshots
-  ![Screenshot-project-details](https://github.com/sabinamp/github-proj/blob/main/assets/Screenshot-project-details.png)
+  Projects Page
   ![Screenshot-projects](https://github.com/sabinamp/github-proj/blob/main/assets/Screenshot-projects.png)
+  Project Details Page
+  ![Screenshot-project-details](https://github.com/sabinamp/github-proj/blob/main/assets/Screenshot-project-details.png)
