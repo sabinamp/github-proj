@@ -7,7 +7,10 @@ import ProjectDetails from "../pages/ProjectDetails";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const AppWrapper = styled.div`
-	text-align: center;
+width: 100%;
+margin: 0rem;
+text-align: center;
+font-weight: 600;
 `;
 
 const GlobalStyle = createGlobalStyle`

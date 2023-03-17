@@ -10,7 +10,7 @@ const ProfileWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	align-items: center;
+	align-items:center;
 	text-align: left;
 	font-weight: 600;
 `;

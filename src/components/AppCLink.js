@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const AppLink = styled.a`
  color: #b3b492;
  padding-left: 0.4rem;
+ text-decoration: none;
 `;
 
 const AppCLink = ({ url, title }) => (

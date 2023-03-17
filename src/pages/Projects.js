@@ -6,12 +6,12 @@ import { Link as RouterLink } from "react-router-dom";
 
 const ProjWrapper = styled.div`
 	width: auto;
-	margin: 2rem auto;
-	padding: 1rem;
+	margin: 2rem 2rem;
+	padding: 2rem 4rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	align-items: center;
+	align-items: space-around;
 	text-align: left;
 	font-weight: 600;
 `;
@@ -38,10 +38,10 @@ const Projects = ({ userName }) => {
 
 	const projects = repos.map((repository) => ({
 		field: repository.name,
-		label: repository.name + ", Language: " + repository.language,
+		label: repository.name,
 		value: (
 			<div>
-				<AppCLink url={repository.html_url} title="GitHub Repository HTML URL" />
+				
                 <RouterLink to={`/projects/${repository.name}`}
 					title="GitHub Repository Details" > Project Details</RouterLink>
 			

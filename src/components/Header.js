@@ -32,6 +32,7 @@ const Logo = styled.img`
 const NavLink = styled.a`
  color: #b3b492;
  margin-right: 1rem;
+ text-decoration: none;
 `;
 
 const Navc= styled.nav`
